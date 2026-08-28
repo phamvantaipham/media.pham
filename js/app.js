@@ -430,11 +430,11 @@ class PhoneModal {
 
   init() {
     const modalHTML = `
-      <div class="phone-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
-        <div class="phone-modal__content" style="background: var(--color-background); padding: 40px; border-radius: 16px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transform: scale(0.9); transition: transform 0.3s ease; position: relative;">
+      <div class="phone-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; padding: 20px;">
+        <div class="phone-modal__content" style="background: var(--color-background); padding: clamp(20px, 5vw, 40px); border-radius: 16px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transform: scale(0.9); transition: transform 0.3s ease; position: relative; width: 100%; max-width: 400px;">
           <button class="phone-modal__close" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--color-text-light);">&times;</button>
-          <div style="font-size: 18px; margin-bottom: 10px; color: var(--color-text-light);">Hotline (Trung Hiếu Media)</div>
-          <div style="font-size: 48px; font-weight: 700; color: var(--color-primary); margin-bottom: 20px; letter-spacing: 2px; white-space: nowrap;">085 996 4008</div>
+          <div style="font-size: 16px; margin-bottom: 10px; color: var(--color-text-light);">Hotline (Trung Hiếu Media)</div>
+          <div style="font-size: clamp(32px, 8vw, 48px); font-weight: 700; color: var(--color-primary); margin-bottom: 20px; letter-spacing: 2px; white-space: nowrap;">085 996 4008</div>
           <a href="tel:0859964008" class="btn btn--primary" style="display: inline-flex; align-items: center; gap: 8px;">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
             Gọi Ngay
