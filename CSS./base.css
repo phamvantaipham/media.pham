@@ -1,0 +1,461 @@
+/* ============================================
+   JEXA MEDIA — Design System / Base Styles
+   ============================================ */
+
+/* ----- Google Fonts Import ----- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ----- CSS Custom Properties ----- */
+:root {
+  /* === Brand Colors === */
+  /* Primary — Blue #124798 */
+  --color-primary-900: #071d3d;
+  --color-primary-800: #0b2d5c;
+  --color-primary-700: #0e3a78;
+  --color-primary-600: #124798;
+  --color-primary-500: #124798;
+  --color-primary-400: #3a6bb0;
+  --color-primary-300: #6590c8;
+  --color-primary-200: #91b4de;
+  --color-primary-100: #c8daf0;
+  --color-primary-50:  #e8eff8;
+
+  /* Accent — Gold #a87f24 */
+  --color-accent-900: #5c4413;
+  --color-accent-800: #7a5b19;
+  --color-accent-700: #8f6b1e;
+  --color-accent-600: #a87f24;
+  --color-accent-500: #a87f24;
+  --color-accent-400: #c49d4a;
+  --color-accent-300: #d4b672;
+  --color-accent-200: #e3cf9b;
+  --color-accent-100: #f1e7cd;
+  --color-accent-50:  #f9f4e8;
+
+  /* Neutrals */
+  --color-white: #FFFFFF;
+  --color-off-white: #ebe9e2;
+  --color-gray-100: #e5e3dc;
+  --color-gray-200: #d6d4cd;
+  --color-gray-300: #c4c1b9;
+  --color-gray-400: #a09d95;
+  --color-gray-500: #7c7972;
+  --color-gray-600: #5e5b55;
+  --color-gray-700: #45423d;
+  --color-gray-800: #2e2c28;
+  --color-gray-900: #1a1917;
+  --color-dark: #0D1117;
+  --color-darker: #080B10;
+  --color-darkest: #04060A;
+
+  /* === Semantic Colors === */
+  --color-bg: var(--color-off-white);
+  --color-bg-alt: #e2e0d8;
+  --color-bg-dark: var(--color-dark);
+  --color-text: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-light: var(--color-white);
+  --color-text-muted: var(--color-gray-500);
+  --color-border: var(--color-gray-200);
+  --color-border-light: var(--color-gray-100);
+
+  /* === Typography === */
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Sizes — Fluid Typography */
+  --text-xs: clamp(0.694rem, 0.66vi + 0.53rem, 0.8rem);
+  --text-sm: clamp(0.833rem, 0.79vi + 0.64rem, 0.95rem);
+  --text-base: clamp(0.938rem, 0.5vi + 0.813rem, 1.063rem);
+  --text-lg: clamp(1.125rem, 0.6vi + 0.975rem, 1.25rem);
+  --text-xl: clamp(1.25rem, 0.8vi + 1.05rem, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.2vi + 1.2rem, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.8vi + 1.425rem, 2.5rem);
+  --text-4xl: clamp(2.25rem, 2.5vi + 1.625rem, 3.25rem);
+  --text-5xl: clamp(2.75rem, 3.5vi + 1.875rem, 4.5rem);
+  --text-6xl: clamp(3.5rem, 5vi + 2rem, 6rem);
+  --text-7xl: clamp(4rem, 6vi + 2.5rem, 8rem);
+
+  /* Font Weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.03em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.2em;
+
+  /* === Spacing === */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+  --space-6xl: 12rem;
+
+  /* Section Spacing */
+  --section-padding: clamp(4rem, 8vw, 8rem);
+  --section-padding-lg: clamp(6rem, 12vw, 12rem);
+
+  /* === Layout === */
+  --container-max: 1440px;
+  --container-lg: 1200px;
+  --container-md: 960px;
+  --container-sm: 720px;
+  --container-xs: 540px;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+
+  /* === Borders & Radius === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* === Shadows === */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.15);
+  --shadow-glow-primary: 0 0 30px rgba(18, 71, 152, 0.3);
+  --shadow-glow-accent: 0 0 30px rgba(168, 127, 36, 0.3);
+
+  /* === Transitions === */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 600ms;
+  --duration-slower: 800ms;
+  --duration-slowest: 1200ms;
+
+  /* === Z-index === */
+  --z-base: 1;
+  --z-above: 10;
+  --z-header: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-tooltip: 1500;
+  --z-max: 9999;
+}
+
+/* ----- CSS Reset ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll override for JS control */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* ----- Base Elements ----- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--text-6xl); }
+h2 { font-size: var(--text-5xl); }
+h3 { font-size: var(--text-4xl); }
+h4 { font-size: var(--text-3xl); }
+h5 { font-size: var(--text-2xl); }
+h6 { font-size: var(--text-xl); }
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: var(--leading-normal);
+}
+
+a {
+  color: var(--color-primary-500);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--color-primary-600);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+::selection {
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+}
+
+/* ----- Container ----- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container--lg {
+  max-width: var(--container-lg);
+}
+
+.container--md {
+  max-width: var(--container-md);
+}
+
+.container--sm {
+  max-width: var(--container-sm);
+}
+
+.container--xs {
+  max-width: var(--container-xs);
+}
+
+/* ----- Section ----- */
+.section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+}
+
+.section--lg {
+  padding-top: var(--section-padding-lg);
+  padding-bottom: var(--section-padding-lg);
+}
+
+.section--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4,
+.section--dark h5,
+.section--dark h6 {
+  color: var(--color-text-light);
+}
+
+.section--alt {
+  background-color: var(--color-bg-alt);
+}
+
+/* ----- Typography Utilities ----- */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-reverse {
+  background: linear-gradient(135deg, var(--color-accent-500), var(--color-primary-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+
+.font-heading { font-family: var(--font-heading); }
+.font-body { font-family: var(--font-body); }
+
+.font-light { font-weight: var(--weight-light); }
+.font-regular { font-weight: var(--weight-regular); }
+.font-medium { font-weight: var(--weight-medium); }
+.font-semibold { font-weight: var(--weight-semibold); }
+.font-bold { font-weight: var(--weight-bold); }
+.font-extrabold { font-weight: var(--weight-extrabold); }
+.font-black { font-weight: var(--weight-black); }
+
+.text-muted { color: var(--color-text-muted); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-primary { color: var(--color-primary-500); }
+.text-accent { color: var(--color-accent-500); }
+.text-white { color: var(--color-white); }
+
+/* ----- Spacing Utilities ----- */
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+.mt-3xl { margin-top: var(--space-3xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+.mb-3xl { margin-bottom: var(--space-3xl); }
+
+/* ----- Flex Utilities ----- */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-end { justify-content: flex-end; }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+.gap-2xl { gap: var(--space-2xl); }
+
+/* ----- Grid Utilities ----- */
+.grid { display: grid; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ----- Display Utilities ----- */
+.block { display: block; }
+.inline-block { display: inline-block; }
+.hidden { display: none; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.overflow-hidden { overflow: hidden; }
+
+/* ----- Visual Utilities ----- */
+.rounded { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ----- Accessibility ----- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-primary-500);
+  color: var(--color-white);
+  font-weight: var(--weight-semibold);
+  border-radius: var(--radius-md);
+  z-index: var(--z-max);
+  transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+  color: var(--color-white);
+}
+
+/* ----- Reduced Motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
