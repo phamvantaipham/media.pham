@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="vi" class="lenis">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEXA Media — Creative Media Agency</title>
+  <meta name="description"
+    content="JEXA Media là đội ngũ sáng tạo trẻ, chuyên về sản xuất media, marketing và branding. Chúng tôi biến ý tưởng thành sản phẩm truyền thông có sức ảnh hưởng.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+
+  <!-- Smooth Scroll Library -->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+  <!-- SVG Icons Set -->
+  <svg style="display: none;">
+    <defs>
+      <!-- Search Icon -->
+      <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </symbol>
+      <!-- Close Icon -->
+      <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </symbol>
+      <!-- Arrow Right Icon -->
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </symbol>
+      <!-- Arrow Up Icon -->
+      <symbol id="icon-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </symbol>
+    </defs>
+  </svg>
+</head>
+
+<body class="home">
+  <!-- Loading Screen -->
+  <div class="loader">
+    <div class="loader__logo">
+      <div class="header__logo-text text-3xl">JEXA<span class="accent">.</span></div>
+    </div>
+    <div class="loader__bar">
+      <div class="loader__progress"></div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay">
+    <button class="search-overlay__close" aria-label="Close search">
+      <svg>
+        <use href="#icon-close"></use>
+      </svg>
+    </button>
+    <div class="search-overlay__input-wrap">
+      <input type="text" class="search-overlay__input" placeholder="Tìm kiếm dự án, dịch vụ, blog..."
+        data-i18n-placeholder="search.placeholder">
+    </div>
+    <div class="search-overlay__results">
+      <!-- Search results injected here by JS -->
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav__list">
+      <a href="index.html" class="mobile-nav__link" data-i18n="nav.story">Trang Chủ</a>
+      <a href="people.html" class="mobile-nav__link" data-i18n="nav.people">Con Người</a>
+      <a href="services.html" class="mobile-nav__link" data-i18n="nav.services">Dịch Vụ</a>
+      <a href="projects.html" class="mobile-nav__link" data-i18n="nav.projects">Dự Án</a>
+      <a href="blog.html" class="mobile-nav__link" data-i18n="nav.blog">Blog</a>
+      <a href="contact.html" class="mobile-nav__link text-primary" data-i18n="nav.contact">Liên Hệ</a>
+    </div>
+    <div class="mobile-nav__footer">
+      <div class="lang-switch">
+        <button class="lang-switch__btn active" data-lang="vi">VI</button>
+        <button class="lang-switch__btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="header header--dark">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <div class="header__logo-text">JEXA<span class="accent">.</span></div>
+      </a>
+
+      <nav class="nav">
+        <div class="nav__list">
+          <a href="index.html" class="nav__link" data-i18n="nav.story">Trang Chủ</a>
+          <a href="people.html" class="nav__link" data-i18n="nav.people">Con Người</a>
+          <a href="services.html" class="nav__link" data-i18n="nav.services">Dịch Vụ</a>
+          <a href="projects.html" class="nav__link" data-i18n="nav.projects">Dự Án</a>
+          <a href="blog.html" class="nav__link" data-i18n="nav.blog">Blog</a>
+          <a href="contact.html" class="nav__link text-accent" data-i18n="nav.contact">Liên Hệ</a>
+        </div>
+
+        <div class="nav__actions">
+          <button class="search-toggle" aria-label="Search">
+            <svg>
+              <use href="#icon-search"></use>
+            </svg>
+          </button>
+          <div class="lang-switch hidden lg:flex">
+            <button class="lang-switch__btn active" data-lang="vi">VI</button>
+            <button class="lang-switch__btn" data-lang="en">EN</button>
+          </div>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="menu-toggle__bar"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- BLOCK 01: HERO INTRO (VIDEO SEQUENCE) -->
+    <section class="hero">
+      <h1 class="sr-only">JEXA Media - Creative Media Agency</h1>
+
+      <div class="hero__video-sequence">
+        <!-- Frame 1: Con Người -->
+        <div class="hero__video-frame">
+          <img src="./assets/images/people.png" alt="Con Người">
+        </div>
+        <!-- Frame 2: Dịch Vụ -->
+        <div class="hero__video-frame">
+          <img src="./assets/images/marketing.png" alt="Dịch Vụ">
+        </div>
+        <!-- Frame 3: Phần Quà -->
+        <div class="hero__video-frame">
+          <img src="./assets/images/project1.png" alt="Phần Quà">
+        </div>
+        <!-- Frame 4: Logo -->
+        <div class="hero__video-frame hero__video-frame--logo">
+          <div class="header__logo-text text-8xl text-white">JEXA<span class="accent">.</span></div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" style="z-index: 10;">
+        <span data-i18n="scroll_down">Cuộn xuống</span>
+        <div class="scroll-indicator__icon">
+          <div class="scroll-indicator__dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 02: OUR STORY -->
+    <!-- BLOCK 02: STORY SECTION -->
+    <section class="section story" id="story">
+      <div class="container">
+        <div class="story__wrapper">
+          <div class="story__visual reveal reveal--left">
+            <div class="story__image-wrap">
+              <img src="./assets/images/team.png" alt="Our Team" class="story__image">
+              <div class="story__image-badge">
+                <div class="story__image-badge-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div>
+                  <div class="story__image-badge-text">JEXA MEDIA PRODUCTION</div>
+                  <div class="story__image-badge-sub">Kể câu chuyện thương hiệu của bạn theo cách độc bản</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="story__content">
+            <div class="section-label reveal reveal--right" data-i18n="story.label">Câu Chuyện Của Chúng Tôi</div>
+            <h2 class="section-title reveal reveal--right reveal--delay-1 split-text" data-i18n="story.title">Sáng Tạo Từ Đam Mê, Dẫn Dắt Bằng Chiến Lược</h2>
+            <p class="text-lg text-secondary mb-xl reveal reveal--right reveal--delay-2" data-i18n="story.desc">
+              JEXA Media được thành lập từ niềm đam mê kể chuyện và mong muốn tạo ra những sản phẩm truyền thông thực sự
+              chạm đến cảm xúc con người. Chúng tôi tin rằng mỗi thương hiệu đều có một câu chuyện đáng được kể, và
+              nhiệm vụ của chúng tôi là kể câu chuyện đó theo cách đẹp nhất.
+            </p>
+
+            <div class="story__flow">
+              <div class="story__step reveal reveal--right reveal--delay-3">
+                <div class="story__step-number">01</div>
+                <div class="story__step-content">
+                  <h3 class="story__step-title" data-i18n="story.step1.title">Con Người</h3>
+                  <p class="story__step-desc" data-i18n="story.step1.desc">Mọi thứ bắt đầu từ con người — đội ngũ sáng tạo tài năng và khách hàng tin tưởng.</p>
+                </div>
+              </div>
+              <div class="story__step reveal reveal--right reveal--delay-3">
+                <div class="story__step-number">02</div>
+                <div class="story__step-content">
+                  <h3 class="story__step-title" data-i18n="story.step2.title">Ý Tưởng</h3>
+                  <p class="story__step-desc" data-i18n="story.step2.desc">Lắng nghe, nghiên cứu và phát triển ý tưởng phù hợp với mục tiêu kinh doanh.</p>
+                </div>
+              </div>
+              <div class="story__step reveal reveal--right reveal--delay-3">
+                <div class="story__step-number">03</div>
+                <div class="story__step-content">
+                  <h3 class="story__step-title" data-i18n="story.step3.title">Sáng Tạo</h3>
+                  <p class="story__step-desc" data-i18n="story.step3.desc">Biến ý tưởng thành hiện thực với chất lượng production cao cấp.</p>
+                </div>
+              </div>
+              <div class="story__step reveal reveal--right reveal--delay-4">
+                <div class="story__step-number">04</div>
+                <div class="story__step-content">
+                  <h3 class="story__step-title" data-i18n="story.step4.title">Sản Phẩm</h3>
+                  <p class="story__step-desc" data-i18n="story.step4.desc">Mỗi sản phẩm là một tác phẩm — từ video, hình ảnh đến chiến dịch digital.</p>
+                </div>
+              </div>
+              <div class="story__step reveal reveal--right reveal--delay-5">
+                <div class="story__step-number">05</div>
+                <div class="story__step-content">
+                  <h3 class="story__step-title text-primary" data-i18n="story.step5.title">Kết Quả</h3>
+                  <p class="story__step-desc" data-i18n="story.step5.desc">Tạo ra kết quả thực sự: tăng trưởng thương hiệu, tương tác và chuyển đổi.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-2xl reveal reveal--up reveal--delay-6">
+              <a href="about.html" class="btn btn--primary">
+                <span data-i18n="story.cta">Khám Phá Về JEXA Media</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 03: PARTNERS -->
+    <section class="partners">
+      <div class="container">
+        <div class="partners__title reveal" data-i18n="partners.title">Đối Tác Đã Tin Tưởng</div>
+
+        <!-- Top Featured Partners -->
+        <div class="partners__featured reveal reveal--up">
+          <div class="partners__featured-grid">
+            <div class="partners__featured-item">
+              <img src="./logo_doitac/quoc-huy-viet-nam.png" alt="Quốc Huy Việt Nam">
+            </div>
+            <div class="partners__featured-item">
+              <img src="./logo_doitac/bo-chi-huy-quan-su-thanh-pho-hue.png" alt="Bộ Chỉ Huy Quân Sự Thành Phố Huế">
+            </div>
+            <div class="partners__featured-item">
+              <img src="./logo_doitac/thanh-doan-thanh-pho-hue.png" alt="Thành Đoàn Thành Phố Huế">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee for Other Partners -->
+      <div class="marquee reveal reveal--delay-1 mt-3xl">
+        <div class="marquee__track">
+          <div class="marquee__item"><img src="./logo_doitac/Americano.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/DIENQUAN Media Entertainment.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/Google Logo.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/Hiroshima Toyota.jpg" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/KOTO.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/NEM TRUNG NGUYEN.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/Panna NHÀ HÀNG CHAY.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/Sender Shipping.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/Toyota.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/fpt-education-seeklogo.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/fpt-shop-logo.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/logo-batdongsan-com-vn.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/logo-fpt-long-chau.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/logo-nem-thang-loi.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/logo-yen-sao-rednest-transparent.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/namnest-logo-transparent.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/ntss-2-02.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/quan-an-ngay-3-bua.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/the-fullton-logo.png" alt="Partner"></div>
+          <div class="marquee__item"><img src="./logo_doitac/truesky-logo-.png" alt="Partner"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 04: STATS COUNTER -->
+    <section class="stats section-padding">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item reveal reveal--up">
+            <div class="stats__card">
+              <div class="stats__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+              </div>
+              <div class="stat">
+                <div class="stat__number"><span class="stat__prefix">+</span><span data-counter="100"
+                    data-counter-duration="2500">0</span></div>
+                <div class="stat__label" data-i18n="stats.projects">Dự Án Hoàn Thành</div>
+              </div>
+            </div>
+          </div>
+          <div class="stats__item reveal reveal--up reveal--delay-1">
+            <div class="stats__card">
+              <div class="stats__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                  </path>
+                </svg>
+              </div>
+              <div class="stat">
+                <div class="stat__number"><span class="stat__prefix">+</span><span data-counter="50"
+                    data-counter-duration="2500">0</span></div>
+                <div class="stat__label" data-i18n="stats.brands">Thương Hiệu Đồng Hành</div>
+              </div>
+            </div>
+          </div>
+          <div class="stats__item reveal reveal--up reveal--delay-2">
+            <div class="stats__card">
+              <div class="stats__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <div class="stat">
+                <div class="stat__number"><span class="stat__prefix">+</span><span data-counter="1000000"
+                    data-counter-duration="3000">0</span></div>
+                <div class="stat__label" data-i18n="stats.views">Lượt Xem Media</div>
+              </div>
+            </div>
+          </div>
+          <div class="stats__item reveal reveal--up reveal--delay-3">
+            <div class="stats__card">
+              <div class="stats__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <div class="stat">
+                <div class="stat__number"><span class="stat__prefix">+</span><span data-counter="5"
+                    data-counter-duration="2000">0</span></div>
+                <div class="stat__label" data-i18n="stats.experience">Năm Kinh Nghiệm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK 05: PROJECTS SHOWCASE -->
+    <section class="section projects-showcase">
+      <div class="container">
+        <div class="projects-showcase__header">
+          <div class="section-header mb-0">
+            <div class="section-label reveal" data-i18n="projects.label">Dự Án Tiêu Biểu</div>
+            <h2 class="section-title reveal reveal--delay-1 split-text" data-i18n="projects.title">Sản Phẩm Nói Lên Tất
+              Cả</h2>
+          </div>
+          <div class="reveal reveal--right reveal--delay-2">
+            <a href="projects.html" class="btn btn--ghost">
+              <span data-i18n="projects.view_all">Xem Tất Cả Dự Án</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="projects-asymmetric mt-3xl">
+          <div class="projects-asymmetric__col">
+            <!-- Project 1 (Large) -->
+            <a href="project-detail.html" class="project-card reveal reveal--up clip-reveal">
+              <img data-src="./assets/images/project1.png" alt="Aurora Brand TVC" class="project-card__image"
+                style="aspect-ratio: 4/5;">
+              <div class="project-card__overlay">
+                <div class="project-card__category">TVC & Brand Film</div>
+                <h3 class="project-card__title">Aurora — The New Dawn</h3>
+                <div class="project-card__client">Client: Aurora Fashion</div>
+                <div class="btn btn--sm btn--primary mt-md">
+                  <span data-i18n="projects.view_case">Xem Case Study</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <!-- Project 2 (Small) -->
+            <a href="project-detail.html" class="project-card reveal reveal--up clip-reveal">
+              <img data-src="./assets/images/project2.png" alt="FoodPanda Short Video" class="project-card__image"
+                style="aspect-ratio: 16/10;">
+              <div class="project-card__overlay">
+                <div class="project-card__category">Short Video</div>
+                <h3 class="project-card__title">FoodPanda — Cravings</h3>
+                <div class="project-card__client">Client: FoodPanda</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="projects-asymmetric__col">
+            <!-- Project 3 (Small) -->
+            <a href="project-detail.html" class="project-card reveal reveal--up reveal--delay-2 clip-reveal">
+              <img data-src="./assets/images/project3.png" alt="NovaTech Rebranding" class="project-card__image"
+                style="aspect-ratio: 16/10;">
+              <div class="project-card__overlay">
+                <div class="project-card__category">Branding & Web</div>
+                <h3 class="project-card__title">NovaTech Rebranding</h3>
+                <div class="project-card__client">Client: NovaTech Global</div>
+              </div>
+            </a>
+            <!-- Project 4 (Large) -->
+            <a href="project-detail.html" class="project-card reveal reveal--up reveal--delay-2 clip-reveal">
+              <img data-src="./assets/images/project4.png" alt="Vivo Campaign" class="project-card__image"
+                style="aspect-ratio: 4/5;">
+              <div class="project-card__overlay">
+                <div class="project-card__category">Digital Campaign</div>
+                <h3 class="project-card__title">Vivo — Ignite Your Night</h3>
+                <div class="project-card__client">Client: Vivo Mobile</div>
+                <div class="btn btn--sm btn--primary mt-md">
+                  <span data-i18n="projects.view_case">Xem Case Study</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCK: CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-section__content">
+          <h2 class="cta-section__title reveal reveal--up split-text" data-i18n="cta.title">Sẵn Sàng Bắt Đầu Dự Án Tiếp
+            Theo?</h2>
+          <p class="cta-section__desc reveal reveal--up reveal--delay-1" data-i18n="cta.desc">Hãy để chúng tôi biến ý
+            tưởng của bạn thành hiện thực.</p>
+          <div class="magnetic-wrap reveal reveal--up reveal--delay-2">
+            <a href="contact.html" class="btn btn--accent btn--lg">
+              <span data-i18n="cta.button">Bắt Đầu Ngay</span>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- JS -->
+  <!-- Custom Footer -->
+  <footer class="footer-custom">
+    <div class="footer-custom__header">
+      <a href="index.html" class="footer-custom__logo">
+        <div class="header__logo-text text-4xl">JEXA<span class="accent">.</span></div>
+      </a>
+      <h2 class="footer-custom__company-name">CÔNG TY TNHH JEXA MEDIA</h2>
+    </div>
+
+    <div class="footer-custom__divider"></div>
+
+    <div class="footer-custom__grid">
+      <!-- Col 1 -->
+      <div class="footer-custom__col footer-custom__col--info">
+        <h4 class="footer-custom__col-title">THÔNG TIN LIÊN HỆ</h4>
+        <div class="footer-custom__info-item">
+          <span class="label">Trụ sở</span>
+          <span class="value">26/43 Đường số 40, Phường Hiệp Bình,<br>Thành Phố Hồ Chí Minh</span>
+        </div>
+        <div class="footer-custom__info-item">
+          <span class="label">Điện thoại</span>
+          <span class="value">
+            0329032237 (Tài Phẩm)<br>
+            0859964008 (Trung Hiếu media)
+          </span>
+        </div>
+        <div class="footer-custom__info-item">
+          <span class="label">Email</span>
+          <span class="value"><a href="mailto:phamvantaipham0410@gmail.com">phamvantaipham0410@gmail.com</a></span>
+        </div>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="footer-custom__col">
+        <h4 class="footer-custom__col-title">VỀ CHÚNG TÔI</h4>
+        <ul class="footer-custom__links">
+          <li><a href="about.html">Câu chuyện JEXA Media</a></li>
+          <li><a href="about.html">— Triết lý sáng tạo</a></li>
+          <li><a href="about.html">Giá trị cốt lõi</a></li>
+          <li><a href="people.html">Con người</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="footer-custom__col">
+        <h4 class="footer-custom__col-title">KHÁM PHÁ</h4>
+        <ul class="footer-custom__links">
+          <li><a href="services.html">Dịch vụ</a></li>
+          <li><a href="projects.html">Dự án</a></li>
+          <li><a href="blog.html">Blog & Tin tức</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4 -->
+      <div class="footer-custom__col">
+        <h4 class="footer-custom__col-title">KẾT NỐI VỚI CHÚNG TÔI</h4>
+        <ul class="footer-custom__links">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Zalo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-custom__bottom-pattern"></div>
+  </footer>
+
+  <!-- Floating Contact Buttons -->
+  <div class="floating-contact">
+    <a href="https://zalo.me/0859964008" class="floating-btn floating-btn--zalo" target="_blank" aria-label="Zalo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo"
+        style="width: 32px; height: 32px;">
+    </a>
+    <a href="https://www.facebook.com/th.account?mibextid=wwXIfr&rdid=69p4ac6bxCiIEpdt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HPY65Sio3%2F%3Fmibextid%3DwwXIfr" class="floating-btn floating-btn--messenger" target="_blank" aria-label="Messenger">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2C6.477 2 2 6.14 2 11.25c0 2.91 1.488 5.498 3.795 7.152.2.143.327.37.313.615l-.18 3.197c-.033.585.602.946 1.07.614l3.14-2.222c.2-.143.447-.202.69-.17a10.824 10.824 0 001.172.064c5.523 0 10-4.14 10-9.25S17.523 2 12 2zm1.093 12.38l-2.613-2.784a.8.8 0 00-1.16-.03l-3.35 3.52c-.37.388-.95-.084-.68-.535l3.52-5.914a1.2 1.2 0 011.66-.41l2.614 2.783a.8.8 0 001.16.03l3.35-3.52c.37-.388.95.084.68.535l-3.52 5.914a1.2 1.2 0 01-1.66.41z">
+        </path>
+      </svg>
+    </a>
+    <a href="tel:0859964008" class="floating-btn floating-btn--phone" aria-label="Phone">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z">
+        </path>
+      </svg>
+    </a>
+  </div>
+
+  <script src="./js/i18n.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/home.js"></script>
+  <script>
+    // Initialize Lenis smooth scroll
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  </script>
+</body>
+
+</html>
